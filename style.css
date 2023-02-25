@@ -1,0 +1,218 @@
+/* RESET CSS */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS VARIABLES */
+:root {
+  --bg-color: #ff4c4b;
+  --primary-color: #ffdc1d;
+  --start-bg-color: #ff4c4cb8;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.start_screen {
+  background-color: var(--start-bg-color);
+  width: 100%;
+  height: 100vh;
+  transition: 0.3s;
+  transform: scale(1);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 0%;
+}
+
+.btn1,
+.btn2,
+.btn3 {
+  appearance: none;
+  background-color: #ffffff;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #adcfff 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.24px;
+  margin: 0;
+  outline: none;
+  padding: 10px 35px;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn1:hover {
+  background-color: #ffc229;
+  box-shadow: #ff6314 0 -6px 8px inset;
+  transform: scale(1.125);
+  color: white;
+}
+
+.btn1:active {
+  transform: scale(1.025);
+}
+
+.btn2:hover {
+  background-color: #ffc229;
+  box-shadow: #ff6314 0 -6px 8px inset;
+  transform: scale(1.125);
+  color: white;
+}
+
+.btn2:active {
+  transform: scale(1.025);
+}
+
+.btn3:hover {
+  background-color: #ffc229;
+  box-shadow: #ff6314 0 -6px 8px inset;
+  transform: scale(1.125);
+  color: white;
+}
+
+.btn3:active {
+  transform: scale(1.025);
+}
+
+.game_title {
+  min-width: 100px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.game_body {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.boxes {
+  background-color: transparent;
+  border: 10px solid var(--primary-color);
+  width: 130px;
+  color: var(--primary-color);
+  height: 130px;
+  font-weight: bolder;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(primary);
+  font-size: 90px;
+  margin: 5px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  cursor: pointer;
+}
+
+.boxes::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+  opacity: 0%;
+}
+
+.boxes:hover::after {
+  opacity: 30%;
+}
+
+.boxes:active::after {
+  background-color: var(--bg-color);
+}
+
+.winner_screen_show {
+  width: 100%;
+  height: 100vh;
+  transform: scale(0);
+  position: fixed;
+  transition: 0.3s;
+  top: 0%;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.playerName {
+  font-size: 200px;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--primary-color);
+  text-shadow: 0 2px 1px #ffc229, -1px 3px 1px #ffc240, -2px 5px 1px #ffc105;
+}
+
+.win_text {
+  font-size: 50px;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 500px) {
+  .boxes {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .boxes {
+    width: 80px;
+    height: 80px;
+    font-size: 70px;
+    border: 7px solid var(--primary-color);
+  }
+  .btn3 {
+    padding: 7px 20px;
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 336px) {
+  .boxes {
+    width: 65px;
+    height: 65px;
+    font-size: 50px;
+    border: 5px solid var(--primary-color);
+  }
+  .btn3 {
+    padding: 5px 20px;
+    font-size: 15px;
+  }
+}
